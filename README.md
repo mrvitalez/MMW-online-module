@@ -45,7 +45,7 @@ presentations; no text or figures are copied from the reference books. Videos: T
 ```
 index.html, modules/      Entry pages that send visitors to the RTU-only student site
 assets/config.js          The student site URL (set once by the instructor)
-assets/style.css          Shared styles (Indigo with Golden Yellow theme)
+assets/style.css          Shared styles (Maroon and Gold theme)
 content/                  Lessons, activities, problem sets, manifest and syllabus (no answers)
 img/                      Figures and the university seal
 syllabus/                 The course syllabus (PDF), opened by the Syllabus button
