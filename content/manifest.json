@@ -1,0 +1,735 @@
+{
+ "course": "GE04",
+ "courseTitle": "Mathematics in the Modern World",
+ "instructor": "Instr. Ryan M. Vitalez, LPT",
+ "university": "Rizal Technological University",
+ "department": "College of Engineering",
+ "program": "All Engineering Programs",
+ "logo": "https://raw.githubusercontent.com/mrvitalez/MMW-online-module/main/img/rtu-logo.jpg",
+ "parts": [
+  {
+   "title": "Part I · Mathematics in Our World",
+   "span": "Modules 1-2 (Preliminary period)",
+   "blurb": "Patterns and numbers in nature, the Fibonacci sequence, and mathematics as a precise language of sets, functions, relations and logic.",
+   "modules": [
+    1,
+    2
+   ],
+   "problemSet": 1
+  },
+  {
+   "title": "Part II · Mathematics as a Tool",
+   "span": "Modules 3-4 (Midterm period)",
+   "blurb": "Inductive and deductive reasoning, Polya's problem solving, and statistics: from gathering data to correlation and regression.",
+   "modules": [
+    3,
+    4
+   ],
+   "problemSet": 2
+  },
+  {
+   "title": "Part III · Logic and Graphs",
+   "span": "Modules 5-6 (Final period)",
+   "blurb": "Statements, truth tables, conditionals and valid arguments, then graphs, Euler circuits, weighted graphs, planarity and coloring.",
+   "modules": [
+    5,
+    6
+   ],
+   "problemSet": 3
+  }
+ ],
+ "problemSets": [
+  {
+   "n": 1,
+   "title": "Problem Set 1: Mathematics in Our World",
+   "modules": [
+    1,
+    2
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Problem Set 2: Reasoning and Statistics",
+   "modules": [
+    3,
+    4
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Problem Set 3: Logic and Graphs",
+   "modules": [
+    5,
+    6
+   ]
+  }
+ ],
+ "modules": [
+  {
+   "n": 1,
+   "title": "The Nature of Mathematics",
+   "tab": "M01 Nature of Mathematics",
+   "icon": "🌻",
+   "optional": false,
+   "overview": "Mathematics is more than computation: it is the study of patterns. This module explores patterns and numbers in nature, the Fibonacci sequence and the golden ratio, and how mathematics organizes regularities, predicts phenomena, and helps people manage the world for human ends.",
+   "topics": [
+    "Patterns and Numbers in Nature and the World",
+    "The Fibonacci Sequence",
+    "Patterns and Regularities in the World as Organized by Mathematics",
+    "Phenomena in the World as Predicted by Mathematics",
+    "Nature and Occurrences in the World as Controlled by Mathematics for Human Ends",
+    "Applications of Mathematics in the World"
+   ],
+   "sections": [
+    [
+     "1.1",
+     "Patterns and Numbers in Nature and the World"
+    ],
+    [
+     "1.2",
+     "The Fibonacci Sequence"
+    ],
+    [
+     "1.3",
+     "Patterns and Regularities in the World as Organized by Mathematics"
+    ],
+    [
+     "1.4",
+     "Phenomena in the World as Predicted by Mathematics"
+    ],
+    [
+     "1.5",
+     "Nature and Occurrences in the World as Controlled by Mathematics for Human Ends"
+    ],
+    [
+     "1.6",
+     "Applications of Mathematics in the World"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q2",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q3",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q4",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q5",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q6",
+     "type": "numeric",
+     "unit": "m",
+     "choices": 0
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "people",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q9",
+     "type": "numeric",
+     "unit": "pesos",
+     "choices": 0
+    },
+    {
+     "id": "q10",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 1: Patterns All Around"
+  },
+  {
+   "n": 2,
+   "title": "Mathematical Language and Symbols",
+   "tab": "M02 Language and Symbols",
+   "icon": "🔣",
+   "optional": false,
+   "overview": "Mathematics is a language with its own symbols, grammar and conventions. This module studies its characteristics (precise, concise, powerful), the difference between expressions and sentences, its conventions, the four basic concepts of sets, relations, functions and binary operations, the vocabulary of elementary logic, and the role of formality.",
+   "topics": [
+    "Characteristics of Mathematical Language: Precise, Concise, Powerful",
+    "Expressions versus Sentences",
+    "Conventions in the Mathematical Language",
+    "Four Basic Concepts: Sets, Functions, Relations, Binary Operations",
+    "Elementary Logic: Connectives, Quantifiers, Negation, Variables",
+    "Formality"
+   ],
+   "sections": [
+    [
+     "2.1",
+     "Characteristics of Mathematical Language: Precise, Concise, Powerful"
+    ],
+    [
+     "2.2",
+     "Expressions versus Sentences"
+    ],
+    [
+     "2.3",
+     "Conventions in the Mathematical Language"
+    ],
+    [
+     "2.4",
+     "Four Basic Concepts: Sets, Functions, Relations, Binary Operations"
+    ],
+    [
+     "2.5",
+     "Elementary Logic: Connectives, Quantifiers, Negation, Variables"
+    ],
+    [
+     "2.6",
+     "Formality"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q2",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q3",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q4",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q5",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q6",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q9",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q10",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 2: Speaking Mathematics"
+  },
+  {
+   "n": 3,
+   "title": "Problem Solving and Reasoning",
+   "tab": "M03 Problem Solving",
+   "icon": "🧩",
+   "optional": false,
+   "overview": "How do mathematicians reach conclusions they can trust? This module contrasts inductive and deductive reasoning, shows how intuition becomes proof and certainty, and gives you Pólya's four steps and a toolbox of strategies for solving problems involving patterns and recreational puzzles.",
+   "topics": [
+    "Inductive and Deductive Reasoning",
+    "Intuition, Proof, and Certainty",
+    "Pólya's Four Steps in Problem Solving",
+    "Problem-Solving Strategies",
+    "Mathematical Problems Involving Patterns",
+    "Recreational Problems Using Mathematics"
+   ],
+   "sections": [
+    [
+     "3.1",
+     "Inductive and Deductive Reasoning"
+    ],
+    [
+     "3.2",
+     "Intuition, Proof, and Certainty"
+    ],
+    [
+     "3.3",
+     "Pólya's Four Steps in Problem Solving"
+    ],
+    [
+     "3.4",
+     "Problem-Solving Strategies"
+    ],
+    [
+     "3.5",
+     "Mathematical Problems Involving Patterns"
+    ],
+    [
+     "3.6",
+     "Recreational Problems Using Mathematics"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q2",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q3",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q4",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q5",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q6",
+     "type": "numeric",
+     "unit": "pigs",
+     "choices": 0
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "pesos",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "expr",
+     "unit": "",
+     "choices": 0,
+     "vars": [
+      "n"
+     ],
+     "domain": {
+      "n": [
+       1,
+       10
+      ]
+     },
+     "constant": false
+    },
+    {
+     "id": "q9",
+     "type": "numeric",
+     "unit": "people",
+     "choices": 0
+    },
+    {
+     "id": "q10",
+     "type": "numeric",
+     "unit": "moves",
+     "choices": 0
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 3: Think It Through"
+  },
+  {
+   "n": 4,
+   "title": "Statistics",
+   "tab": "M04 Statistics",
+   "icon": "📊",
+   "optional": false,
+   "overview": "How can we use data to make better decisions when we are uncertain? Following a survey of how RTU students commute, this module takes you through gathering, organizing, representing, analyzing and interpreting data: averages and spread, z-scores and percentiles, probability and the normal curve, and correlation and regression.",
+   "topics": [
+    "Gathering, Organizing, Representing, Analyzing and Interpreting Data",
+    "Measures of Central Tendency",
+    "Measures of Dispersion",
+    "Measures of Relative Position",
+    "Probabilities and the Normal Distribution",
+    "Correlation and Regression"
+   ],
+   "sections": [
+    [
+     "4.1",
+     "Gathering, Organizing, Representing, Analyzing and Interpreting Data"
+    ],
+    [
+     "4.2",
+     "Measures of Central Tendency"
+    ],
+    [
+     "4.3",
+     "Measures of Dispersion"
+    ],
+    [
+     "4.4",
+     "Measures of Relative Position"
+    ],
+    [
+     "4.5",
+     "Probabilities and the Normal Distribution"
+    ],
+    [
+     "4.6",
+     "Correlation and Regression"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q2",
+     "type": "numeric",
+     "unit": "pesos",
+     "choices": 0
+    },
+    {
+     "id": "q3",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q4",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q5",
+     "type": "numeric",
+     "unit": "min",
+     "choices": 0
+    },
+    {
+     "id": "q6",
+     "type": "numeric",
+     "unit": "pesos",
+     "choices": 0
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q9",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q10",
+     "type": "numeric",
+     "unit": "min",
+     "choices": 0
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 4: Making Sense of Data"
+  },
+  {
+   "n": 5,
+   "title": "Logic",
+   "tab": "M05 Logic",
+   "icon": "⚖️",
+   "optional": false,
+   "overview": "Logic is the study of correct reasoning. This module shows how to write statements in symbols, how truth tables decide when statements are equivalent, why the conditional \"if p then q\" behaves the way it does, and how to test whether an argument is valid using truth tables, standard argument forms and Euler diagrams.",
+   "topics": [
+    "Logic Statements and Quantifiers",
+    "Truth Tables and Tautologies",
+    "The Conditional and the Biconditional",
+    "The Conditional and Related Statements",
+    "Symbolic Arguments",
+    "Arguments and Euler Diagrams"
+   ],
+   "sections": [
+    [
+     "5.1",
+     "Logic Statements and Quantifiers"
+    ],
+    [
+     "5.2",
+     "Truth Tables and Tautologies"
+    ],
+    [
+     "5.3",
+     "The Conditional and the Biconditional"
+    ],
+    [
+     "5.4",
+     "The Conditional and Related Statements"
+    ],
+    [
+     "5.5",
+     "Symbolic Arguments"
+    ],
+    [
+     "5.6",
+     "Arguments and Euler Diagrams"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q2",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q3",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q4",
+     "type": "numeric",
+     "unit": "rows",
+     "choices": 0
+    },
+    {
+     "id": "q5",
+     "type": "numeric",
+     "unit": "rows",
+     "choices": 0
+    },
+    {
+     "id": "q6",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "rows",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "numeric",
+     "unit": "",
+     "choices": 0
+    },
+    {
+     "id": "q9",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q10",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 5: Think Like a Logician"
+  },
+  {
+   "n": 6,
+   "title": "The Mathematics of Graphs",
+   "tab": "M06 Graphs",
+   "icon": "🕸️",
+   "optional": false,
+   "overview": "Graphs are made of points and the lines that join them, and they model roads, networks, schedules and maps. This module starts with the Königsberg bridge problem and Euler circuits, then finds short delivery routes in weighted graphs, tests whether a graph can be drawn without crossings using Euler’s formula, and colours graphs to solve scheduling problems.",
+   "topics": [
+    "Graphs and Euler Circuits",
+    "Weighted Graphs",
+    "Planarity and Euler’s Formula",
+    "Graph Coloring"
+   ],
+   "sections": [
+    [
+     "6.1",
+     "Graphs and Euler Circuits"
+    ],
+    [
+     "6.2",
+     "Weighted Graphs"
+    ],
+    [
+     "6.3",
+     "Planarity and Euler’s Formula"
+    ],
+    [
+     "6.4",
+     "Graph Coloring"
+    ]
+   ],
+   "items": [
+    {
+     "id": "q1",
+     "type": "numeric",
+     "unit": "edges",
+     "choices": 0
+    },
+    {
+     "id": "q2",
+     "type": "numeric",
+     "unit": "vertices",
+     "choices": 0
+    },
+    {
+     "id": "q3",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q4",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q5",
+     "type": "numeric",
+     "unit": "circuits",
+     "choices": 0
+    },
+    {
+     "id": "q6",
+     "type": "numeric",
+     "unit": "min",
+     "choices": 0
+    },
+    {
+     "id": "q7",
+     "type": "numeric",
+     "unit": "min",
+     "choices": 0
+    },
+    {
+     "id": "q8",
+     "type": "numeric",
+     "unit": "faces",
+     "choices": 0
+    },
+    {
+     "id": "q9",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "q10",
+     "type": "mc",
+     "unit": "",
+     "choices": 4
+    },
+    {
+     "id": "reflection",
+     "type": "text",
+     "unit": "",
+     "choices": 0
+    }
+   ],
+   "activityTitle": "Activity 6: Routes, Bridges and Colours"
+  }
+ ]
+}
