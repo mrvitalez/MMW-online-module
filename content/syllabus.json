@@ -1,0 +1,148 @@
+{
+ "source": "GE04 - Mathematics in the Modern World (Outcomes-Based Course Syllabus, effective Oct. 1, 2024)",
+ "courseInfo": [
+  [
+   "Course code",
+   "GE04"
+  ],
+  [
+   "Course title",
+   "Mathematics in the Modern World"
+  ],
+  [
+   "Credit units",
+   "3 units"
+  ],
+  [
+   "Contact hours",
+   "3 hours lecture per week"
+  ],
+  [
+   "Pre-requisite",
+   "None"
+  ],
+  [
+   "Co-requisite",
+   "None"
+  ],
+  [
+   "College / Department",
+   "College of Engineering · CHEMAPHY"
+  ],
+  [
+   "Program",
+   "All Engineering Programs"
+  ],
+  [
+   "Semester",
+   "First Semester, AY 2026-2027"
+  ],
+  [
+   "Instructor",
+   "Instr. Ryan M. Vitalez, LPT"
+  ]
+ ],
+ "description": "This course deals with the nature of Mathematics, appreciation of its practical, intellectual, and aesthetic dimensions, and application of mathematical tools in daily life. The course begins with an introduction to the nature of mathematics as an exploration of patterns (in nature and the environment) and as an application of inductive and deductive reasoning. By exploring these topics, students are encouraged to go beyond the typical understanding of mathematics as merely a set of formulas but as a source of aesthetics in patterns of nature, for example, and a rich language in itself (and of science) governed by logic and reasoning. The course then proceeds to survey ways in which mathematics provides a tool for understanding and dealing with various aspects of present-day living, such as managing personal finances, making social choices, appreciating geometric designs, understanding codes used in data transmission and security, and dividing limited resources fairly. These aspects will provide opportunities for actually doing mathematics in a broad range of exercises that bring out the various dimensions of mathematics as a way of knowing and test the students' understanding and capacity. (CMO No. 20, series of 2013)",
+ "requirements": [
+  "Long Examinations",
+  "Written Works",
+  "Recitation Card"
+ ],
+ "grading": [
+  {
+   "component": "Long Examinations",
+   "weight": "40%",
+   "items": [
+    "Long Examination 1",
+    "Long Examination 2",
+    "Long Examination 3"
+   ]
+  },
+  {
+   "component": "Recitation",
+   "weight": "20%",
+   "items": []
+  },
+  {
+   "component": "Written Works",
+   "weight": "30%",
+   "items": [
+    "Quizzes",
+    "Activities",
+    "Problem Sets"
+   ]
+  },
+  {
+   "component": "Attendance",
+   "weight": "10%",
+   "items": []
+  }
+ ],
+ "transmutation": [
+  [
+   "97% to 100%",
+   "1.00"
+  ],
+  [
+   "93% to 96.99%",
+   "1.25"
+  ],
+  [
+   "89% to 92.99%",
+   "1.50"
+  ],
+  [
+   "85% to 88.99%",
+   "1.75"
+  ],
+  [
+   "81% to 84.99%",
+   "2.00"
+  ],
+  [
+   "77% to 80.99%",
+   "2.25"
+  ],
+  [
+   "73% to 76.99%",
+   "2.50"
+  ],
+  [
+   "69% to 72.99%",
+   "2.75"
+  ],
+  [
+   "65% to 68.99%",
+   "3.00"
+  ],
+  [
+   "64% to 64.99%",
+   "4.00"
+  ],
+  [
+   "63.99% and below",
+   "5.00"
+  ]
+ ],
+ "references": [
+  "Aufmann, R. N., et al. <em>Mathematics in the Modern World</em>, Philippine ed. Cengage Learning.",
+  "Baltazar, E. C., et al. <em>Mathematics in the Modern World</em>.",
+  "Sirug, W. S. <em>Mathematics in the Modern World</em>.",
+  "Oguan, F. E., Jr., et al. <em>Mathematics in the Modern World</em>.",
+  "Rodriguez, M. J. J. <em>Mathematics in the Modern World</em>.",
+  "Other suggested readings: Vila, C., <em>Nature by Numbers</em> (https://vimeo.com/9953368); Meisner, G., <em>Spirals and the Golden Ratio</em> (https://www.goldennumber.net/spirals/)."
+ ],
+ "videoCredit": "Lecture videos in the modules: TED and TEDx talks and TED-Ed lessons (CC BY-NC-ND 4.0) and CrashCourse (CC BY 4.0). Each video is cited on its module page.",
+ "consultation": [
+  {
+   "day": "Wednesday",
+   "time": "9:00 AM to 12:00 PM",
+   "room": "RnD AS611"
+  },
+  {
+   "day": "Friday",
+   "time": "9:00 AM to 11:00 AM",
+   "room": "RnD AS611"
+  }
+ ]
+}
