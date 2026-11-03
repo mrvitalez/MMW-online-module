@@ -118,9 +118,21 @@ starts with some sample text; delete it before pasting. Click **Save**.
 
 ## Class list (who can open the site)
 
-In the admin **Class list** tab, paste the link of your record book, check the tab name (**GE04**), and click
-**Import class list**. It reads the student numbers (column A) and names. The record book link is kept only in your
-private Sheet, not on GitHub.
+In the admin **Class list** tab, paste the link of your record book, list its tabs in **Tab names** (one per line, one
+tab per block section), and click **Import class list**. The box starts with your four tabs:
+
+```
+MMW - CEIT-03-101E
+MMW - CEIT-06-101P
+MMW - CEIT-08-101A
+MMW - CEIT-09-101A
+```
+
+It reads the student numbers (column A) and names from every tab. A tab named **Subject - Block Section** gives its
+students that block section (for example `MMW - CEIT-03-101E` → `CEIT-03-101E`), and each section is added to the
+**Block sections** dropdown. Leave the box empty to read every tab that has student numbers. A student found on two
+tabs is kept on the first and listed after the import. The record book link is kept only in your private Sheet, not
+on GitHub.
 
 - Share **one** link with the whole class: https://mrvitalez.github.io/MMW-online-module/
 - RTU emails are the student number + @rtu.edu.ph, so the site recognises each student on the class list by the

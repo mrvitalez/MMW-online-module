@@ -55,7 +55,7 @@ var DEFAULT_SETTINGS = [
   ['announcement', '', 'Optional message shown at the top of the student home page'],
   ['requireClassList', 'TRUE', 'Only students on the Class List (opening their personal link) can use the site'],
   ['classRecordUrl', '', 'Record book imported into the Class List (pasted in the admin Class list tab)'],
-  ['classRecordSheet', 'GE04', 'Tab of the record book with the student numbers and names'],
+  ['classRecordSheet', 'MMW - CEIT-03-101E\nMMW - CEIT-06-101P\nMMW - CEIT-08-101A\nMMW - CEIT-09-101A', 'Tabs of the record book with the student numbers and names, one per line (one tab per block section)'],
   ['contentVersion', '1', 'Raised by "Refresh lesson content" in the admin site'],
   ['lastArchivedEnd', '', 'Set automatically: end date of the semester last archived']
 ];
@@ -607,32 +607,60 @@ function admin_roster() {
            recordUrl: s.classRecordUrl, recordSheet: s.classRecordSheet, sheetUrl: ss_().getUrl() + '#gid=' + sh.getSheetId() };
 }
 
-/** Reads student numbers and names from the record book tab and merges them into the Class List. */
-function admin_importRoster(url, sheetName) {
+/** Splits the tab names typed in the admin site (one per line, or separated by commas or semicolons). */
+function tabNames_(text) {
+  return String(text || '').split(/[\n,;]+/).map(function (x) { return x.trim(); }).filter(String);
+}
+
+/**
+ * Reads student numbers and names from one or more record book tabs and merges them into the Class List.
+ * Each tab is one block section. A tab named "<subject> - <block section>" (for example "MMW - CEIT-03-101E")
+ * gives its students that block section; otherwise the "YEAR AND SECTION:" cell of the tab is used.
+ * With no tab names, every tab that has student numbers in column A is read.
+ */
+function admin_importRoster(url, sheetNames) {
   requireAdmin_();
   var m = String(url || '').match(/\/d\/([\w-]{20,})/);
   if (!m) throw new Error('Paste the address of your record book (a Google Sheets link).');
   var book;
   try { book = SpreadsheetApp.openById(m[1]); } catch (e) { throw new Error('Could not open that spreadsheet. Check the link and that your account can open it.'); }
-  var tab = book.getSheetByName(String(sheetName || '').trim());
-  if (!tab) throw new Error('There is no tab named "' + sheetName + '" in that spreadsheet.');
-  var data = tab.getDataRange().getDisplayValues();
-  var section = '';
-  var found = [];
-  var seen = {};
-  data.forEach(function (r) {
-    var at = r.indexOf('YEAR AND SECTION:');
-    if (at >= 0 && !section) {
-      for (var j = at + 1; j < r.length; j++) if (r[j].trim()) { section = r[j].trim(); break; }
-    }
-    var no = String(r[0] || '').trim();
-    if (!/^\d{4}-\d{4,8}$/.test(no) || seen[no]) return;
-    var name = '';
-    for (var k = 1; k < r.length; k++) if (r[k].trim()) { name = r[k].replace(/\s+,/g, ',').replace(/\s+/g, ' ').trim(); break; }
-    seen[no] = 1;
-    found.push([no, name]);
+  var names = tabNames_(sheetNames);
+  var all = book.getSheets().map(function (t) { return t.getName(); });
+  var missing = names.filter(function (n) { return all.indexOf(n) < 0; });
+  if (missing.length) {
+    throw new Error('No tab named ' + missing.map(function (n) { return '"' + n + '"'; }).join(', ') +
+      ' in that spreadsheet. Its tabs are: ' + all.join(', ') + '.');
+  }
+  var auto = !names.length;
+  if (auto) names = all;
+
+  var found = [], seen = {}, perTab = [], dup = [];
+  names.forEach(function (tabName) {
+    var data = book.getSheetByName(tabName).getDataRange().getDisplayValues();
+    var dash = tabName.lastIndexOf(' - ');
+    var section = dash >= 0 ? tabName.slice(dash + 3).trim() : '';
+    var count = 0;
+    data.forEach(function (r) {
+      var at = r.indexOf('YEAR AND SECTION:');
+      if (at >= 0 && !section) {
+        for (var j = at + 1; j < r.length; j++) if (r[j].trim()) { section = r[j].trim(); break; }
+      }
+    });
+    if (!section) section = tabName;
+    data.forEach(function (r) {
+      var no = String(r[0] || '').trim();
+      if (!/^\d{4}-\d{4,8}$/.test(no)) return;
+      if (seen[no]) { if (seen[no] !== tabName) dup.push(no + ' (' + seen[no] + ' and ' + tabName + ')'); return; }
+      var name = '';
+      for (var k = 1; k < r.length; k++) if (r[k].trim()) { name = r[k].replace(/\s+,/g, ',').replace(/\s+/g, ' ').trim(); break; }
+      seen[no] = tabName;
+      found.push([no, name, section]);
+      count++;
+    });
+    if (count || !auto) perTab.push({ tab: tabName, section: section, count: count });
   });
-  if (!found.length) throw new Error('No student numbers (like 2026-101878) were found in column A of "' + sheetName + '".');
+  if (!found.length) throw new Error('No student numbers (like 2026-101878) were found in column A of ' +
+    names.map(function (n) { return '"' + n + '"'; }).join(', ') + '.');
 
   var sh = sheetFor_(TABS.ROSTER, ROSTER_HEAD);
   var old = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, ROSTER_HEAD.length).getValues() : [];
@@ -641,18 +669,20 @@ function admin_importRoster(url, sheetName) {
   var added = 0;
   var out = found.map(function (f) {
     var prev = byNo[f[0]];
-    if (prev) return [f[0], f[1], section || prev[2], prev[3], prev[4], prev[5], prev[6]];
+    if (prev) return [f[0], f[1], f[2] || prev[2], prev[3], prev[4], prev[5], prev[6]];
     added++;
-    return [f[0], f[1], section, newCode_(taken), '', '', ''];
+    return [f[0], f[1], f[2], newCode_(taken), '', '', ''];
   });
   var removed = old.filter(function (r) { return !seen[String(r[0])]; }).map(function (r) { return r[0] + ' ' + r[1]; });
   if (sh.getLastRow() > 1) sh.deleteRows(2, sh.getLastRow() - 1);
   sh.getRange(2, 1, Math.max(out.length, 1), 1).setNumberFormat('@');
   sh.getRange(2, 1, out.length, ROSTER_HEAD.length).setValues(out);
-  if (section && sectionsList_().indexOf(section) < 0) admin_saveSections(sectionsList_().concat([section]));
-  writeSettings_({ classRecordUrl: url, classRecordSheet: sheetName });
+  var sections = sectionsList_();
+  var newSections = perTab.map(function (t) { return t.section; }).filter(function (x) { return x && sections.indexOf(x) < 0; });
+  if (newSections.length) admin_saveSections(sections.concat(newSections));
+  writeSettings_({ classRecordUrl: url, classRecordSheet: auto ? '' : names.join('\n') });
   var res = admin_roster();
-  res.imported = { total: out.length, added: added, removed: removed, section: section };
+  res.imported = { total: out.length, added: added, removed: removed, tabs: perTab, duplicates: dup };
   return res;
 }
 

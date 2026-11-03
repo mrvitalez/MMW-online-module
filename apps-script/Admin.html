@@ -468,9 +468,13 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
     var link = function (code) { return (R.url || "(set the Student site address first)") + "?k=" + code; };
     var linked = R.rows.filter(function (r) { return r[4]; }).length;
     var blocked = R.events.filter(function (e) { return /^BLOCKED/.test(e[2]); }).length;
-    var imp = R.imported ? '<div class="notice">✅ Imported ' + R.imported.total + " students" +
-      (R.imported.section ? " (" + esc(R.imported.section) + ")" : "") + ": " + R.imported.added + " new" +
-      (R.imported.removed.length ? "; removed (no longer in the record book): " + esc(R.imported.removed.join(", ")) : "") + ".</div>" : "";
+    var imp = R.imported ? '<div class="notice">✅ Imported ' + R.imported.total + " students: " + R.imported.added + " new" +
+      (R.imported.removed.length ? "; removed (no longer in the record book): " + esc(R.imported.removed.join(", ")) : "") + "." +
+      (R.imported.tabs || []).map(function (t) {
+        return "<br>• " + esc(t.tab) + " → " + esc(t.section) + ": " + t.count + " student" + (t.count === 1 ? "" : "s");
+      }).join("") +
+      ((R.imported.duplicates || []).length ? "<br>⚠️ On more than one tab (kept the first): " + esc(R.imported.duplicates.join("; ")) : "") +
+      "</div>" : "";
     var rows = R.rows.map(function (r) {
       return '<tr data-no="' + esc(r[0]) + '"><td>' + esc(r[0]) + '</td><td class="wrap">' + esc(r[1]) + "</td><td>" + esc(r[2]) +
         '</td><td><input type="text" readonly class="lnk" value="' + esc(link(r[3])) + '" style="min-width:240px"></td>' +
@@ -496,8 +500,10 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       '<p class="muted">While the class list is empty, the site stays open to all RTU accounts, so nobody is locked out before you import it.</p>' +
       "<h3>Import from your record book</h3>" +
       '<div class="form-grid"><label class="field wide">Record book (Google Sheets link)<input type="text" id="rurl" value="' + esc(R.recordUrl) + '"></label>' +
-      '<label class="field">Tab name<input type="text" id="rsheet" value="' + esc(R.recordSheet) + '"></label></div>' +
-      '<p class="muted">Reads the student numbers in column A and the names next to them. Re-import any time: existing links and accounts are kept; ' +
+      '<label class="field wide">Tab names (one per line, one tab per block section)<textarea id="rsheet" rows="4">' + esc(R.recordSheet) + "</textarea></label></div>" +
+      '<p class="muted">Each tab is one block section. A tab named <b>Subject - Block Section</b> (for example <b>MMW - CEIT-03-101E</b>) ' +
+      "gives its students that block section, and the section is added to the dropdown. Leave the box empty to read every tab that has student numbers. " +
+      "Reads the student numbers in column A and the names next to them. Re-import any time: existing links and accounts are kept; " +
       "new students get new links; students no longer in the record book are removed.</p>" +
       '<div class="btnrow"><button class="btn" id="imp">Import class list</button></div>' + imp +
       '<div class="grid2" style="margin-top:18px"><div class="stat"><div class="l">Students</div><div class="v">' + R.rows.length + "</div></div>" +
